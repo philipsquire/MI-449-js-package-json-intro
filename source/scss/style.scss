@@ -1,0 +1,71 @@
+@import "_variables";
+
+
+body {
+  margin: 0;
+  background-color: $back-color;
+  color: $body-color
+}
+
+
+table.menu {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-top: 0;
+  border-left: 0;
+  border-right: $border-line;
+  border-bottom: $border-line;
+  border-bottom-right-radius: $menu-br-rad;
+  background-color: $menu-background-color;
+  box-shadow: $box-shadow;
+  font-family: $font;
+  h1 {
+    margin: $header-margin;
+    font-size: $header-font-size;
+  }
+  td {
+    text-align: center;
+  }
+  button{
+    width: $button-width;
+    background-color: $button-background-color;
+    color: $button-color;
+    text-align: center;
+    font-family: $font;
+    font-weight: normal;
+    font-size: $button-font-size;
+    border: $border-line;
+    transition: $transition;
+    border-radius: $button-border-rad;
+    &:hover {
+      cursor: pointer;
+      background-color: $button-hover-background-color;
+      width: $button-hover-width;
+      transition: $transition
+    }
+    &:active, &:focus {
+      outline: none;
+    }
+  }
+}
+
+table.menu td.label {
+  width: $label-width
+}
+
+table.menu td.label,
+table.menu td.result {
+  text-align: right
+}
+
+.clicky {
+  position: absolute;
+  border-radius: $click-rad;
+  background-color: $click-background-color;
+  border: $border-line;
+  box-shadow: $box-shadow;
+  &:hover {
+    cursor: pointer;
+  }
+}
