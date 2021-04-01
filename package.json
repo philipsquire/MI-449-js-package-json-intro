@@ -5,20 +5,22 @@
     "dev:server": "live-server",
     "dev:sass": "node-sass source/scss/style.scss --watch --output=compiled/css --output-style=compressed --source-map=true",
     "dev": "run-p dev:*",
-    "lint:linthtml": "htmlhint",
-    "lint:lintsass": "npx styleint 'clicky.js'",
+    "lint:linthtml": "npx htmlhint 'index.html'",
+    "lint:lintsass": "npx stylelint clicky.js",
     "lint:lintjs": "npx standard",
     "build:pre": "node-sass source/scss/style.scss --output=compiled/css --output-style=compressed --source-map=true",
-    
     "build": "run-s lint:* build:pre",
     "deploy:surge": "surge --project . --domain https://philipsquire-js-package-json-i.surge.sh",
-    
     "deploy": "run-s build deploy:surge"
   },
   "devDependencies": {
+    "htmlhint": "^0.14.2",
     "live-server": "^1.2.1",
     "node-sass": "^4.14.1",
     "npm-run-all": "^4.1.5",
+    "standard": "^16.0.3",
+    "stylelint": "^13.12.0",
+    "stylelint-config-standard": "^21.0.0",
     "surge": "^0.21.3"
   }
 }
